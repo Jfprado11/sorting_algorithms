@@ -12,10 +12,12 @@ void quick_sort(int *array, size_t size)
 
 	low = 0;
 	high = size - 1;
-	if (size >= 2)
+	if (size < 2 || array == NULL)
 	{
-		qs(array, low, high, size);
+		return;
 	}
+
+	qs(array, low, high, size);
 }
 
 /**
@@ -68,6 +70,5 @@ int partition(int *array, int low, int high, size_t size)
 	array[high] = temp;
 	if (j != i + 1)
 		print_array(array, size);
-
 	return (i + 1);
 }
