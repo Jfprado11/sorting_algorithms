@@ -65,7 +65,7 @@ int partition(int *array, int low, int high, size_t size)
 			}
 		}
 	}
-	if (j != i + 1)
+	if (array[high] < array[i + 1])
 	{
 		temp = array[i + 1];
 		array[i + 1] = array[high];
