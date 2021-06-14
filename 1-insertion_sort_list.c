@@ -10,6 +10,11 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *current = NULL, *temp = NULL;
 
+	if (*list == NULL || (*list)->next == NULL)
+	{
+		return;
+	}
+
 	temp = *list;
 	while (temp->next != NULL)
 	{
@@ -49,7 +54,7 @@ void _swap(listint_t **temp, listint_t **current, listint_t **list)
 		(*current)->prev = (*temp)->prev;
 		(*current)->next = *temp;
 		(*temp)->prev = *current;
-		(*current)->prev->next  = *current;
+		(*current)->prev->next = *current;
 		*temp = *current;
 	}
 	else
