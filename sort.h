@@ -13,9 +13,9 @@
  */
 typedef struct listint_s
 {
-const int n;
-struct listint_s *prev;
-struct listint_s *next;
+    const int n;
+    struct listint_s *prev;
+    struct listint_s *next;
 } listint_t;
 
 void print_array(const int *array, size_t size);
@@ -26,6 +26,6 @@ void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 int partition(int *array, int low, int high, size_t size);
 void qs(int *array, int low, int high, size_t size);
-void _swap(listint_t **temp, listint_t **current, listint_t **list);
+void _swap(listint_t **head, listint_t *new_node);
 
 #endif
