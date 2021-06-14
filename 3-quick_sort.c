@@ -47,21 +47,22 @@ void qs(int *array, int low, int high, size_t size)
  */
 int partition(int *array, int low, int high, size_t size)
 {
-	int pivot = array[high], i = low, j = 0, temp;
+	int pivot = array[high], i = low - 1, j = 0, temp;
 
-	for (j = low; j <= high; j++)
+	for (j = low; j <= high - 1; j++)
 	{
 		if (array[j] < pivot)
 		{
+			i++;
 			temp = array[i];
 			array[i] = array[j];
 			array[j] = temp;
-			i++;
+			print_array(array, size);
 		}
 	}
-	temp = array[i];
-	array[i] = array[high];
+	temp = array[i + 1];
+	array[i + 1] = array[high];
 	array[high] = temp;
 	print_array(array, size);
-	return (i);
+	return (i + 1);
 }
