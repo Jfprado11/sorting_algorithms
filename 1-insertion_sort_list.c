@@ -45,7 +45,8 @@ void _swap(listint_t **sorted, listint_t **current, listint_t **list)
 		(*current)->prev = *sorted;
 		(*current)->next = (*sorted)->next;
 		(*sorted)->next = *current;
-		(*current)->next->prev = *current;
+		if ((*current)->next != NULL)
+			(*current)->next->prev = *current;
 		(*sorted)->prev = NULL;
 		*list = *sorted;
 		*current = (*sorted)->prev;
