@@ -20,13 +20,13 @@ void insertion_sort_list(listint_t **list)
 	while (next != NULL)
 	{
 		sorted = next;
+		next = sorted->next;
 		current = sorted->prev;
 		while (sorted->prev != NULL && sorted->n < current->n)
 		{
 			_swap(&sorted, &current, &(*list));
 			print_list(*list);
 		}
-		next = next->next;
 	}
 }
 
